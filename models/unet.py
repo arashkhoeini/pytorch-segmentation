@@ -207,3 +207,7 @@ class UNetResnet(BaseModel):
     def freeze_bn(self):
         for module in self.modules():
             if isinstance(module, nn.BatchNorm2d): module.eval()
+
+
+class UNetVGG16(BaseModel):
+    pass
