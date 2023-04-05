@@ -223,7 +223,7 @@ def up_conv(in_channels, out_channels):
     )
 
 
-class UNetVGG16(nn.Module):
+class UNetVGG16(BaseModel):
     def __init__(self, encoder= None, n_classes):
         super().__init__()
 

@@ -3,7 +3,7 @@ import json
 import argparse
 import torch
 import dataloaders
-import models
+from models import UNetVGG16
 import inspect
 import math
 from utils import losses
@@ -23,7 +23,7 @@ def main(config, resume):
     val_loader = get_instance(dataloaders, 'val_loader', config)
 
     # MODEL
-    model = get_instance(models, 'arch', config, train_loader.dataset.num_classes)
+    model = UNetVGG16(train_loader.dataset.num_classes)
     print(f'\n{model}\n')
 
     # LOSS
